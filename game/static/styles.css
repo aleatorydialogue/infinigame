@@ -1,0 +1,31 @@
+body {
+    font-family: 'Press Start 2P', cursive; /* Retro game font */
+    background-image: url('/media/background.png'); /* Set your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fix the background */
+    color: #fff; /* White text */
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+}
+
+#game-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+#game-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff; /* White border for image */
+}
+
+#game-text {
+    margin: 20px 0;
+}
+
+#user-input {
+    margin: 10px 0;
+}

@@ -1,0 +1,9 @@
+[
+    {
+        "api_type": "open_ai",
+        "api_base": "http://localhost:5000/v1",
+        "api_key": "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",
+        "model": "zephyr-7B-beta-GPTQ",
+        "max_tokens": "200"
+    }
+]
