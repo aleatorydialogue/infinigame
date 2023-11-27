@@ -1,8 +1,9 @@
 document.getElementById('user-action-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const userInput = document.getElementById('user-input').value;
+    const userInputField = document.getElementById('user-input');
+    const userInput = userInputField.value;
 
-    fetch('/game/', { 
+    fetch('/game/api/', { 
         method: 'POST',
         headers: {
             'X-CSRFToken': getCookie('csrftoken'),
@@ -12,10 +13,14 @@ document.getElementById('user-action-form').addEventListener('submit', function(
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('combined_game_text').innerText = data.combined_game_text;
+        document.getElementById('game-text').innerText = data.game_text; // Update the text with LLM output
+        userInputField.value = ''; // Clear the input field after submitting
+        var imageUrl = '/media/output.png?t=' + new Date().getTime(); // Update the image with a new timestamp
+        document.getElementById('game-image').src = imageUrl;
     })
     .catch(error => console.error('Error:', error));
 });
+
 // Function to get CSRF token from cookies - required for POST requests in Django
 function getCookie(name) {
     let cookieValue = null;
